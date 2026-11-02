@@ -1,0 +1,13 @@
+{
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.autocomplete": "disabled",
+    "clangd.path": "/usr/bin/clangd-22",
+    "clangd.enable": true,
+    "clangd.enableHover": true,
+    "clangd.arguments": [
+        "--experimental-modules-support",
+        "--background-index",
+        "--header-insertion=never",
+        "--query-driver=/usr/bin/clang++-22,/usr/bin/clang-22,/usr/bin/g++-16"
+    ]
+}

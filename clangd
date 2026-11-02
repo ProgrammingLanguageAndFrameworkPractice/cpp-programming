@@ -1,0 +1,24 @@
+# clangd reads this file. The build task still uses g++-16.
+# These flags let IntelliSense resolve `import std;` and show standard-library hovers.
+Index:
+  Background: Build
+  StandardLibrary: Yes
+Hover:
+  ShowAKA: Yes
+---
+If:
+  PathMatch: .*\.c$
+CompileFlags:
+  Compiler: /usr/bin/clang-22
+  Add:
+    - -std=c23
+---
+If:
+  PathExclude: .*\.c$
+CompileFlags:
+  Compiler: /usr/bin/clang++-22
+  Add:
+    - -std=c++23
+    - -stdlib=libc++
+    - -fexperimental-library
+    - -fmodule-file=std=/workspaces/cpp-practice/.vscode/pcm/std.pcm
